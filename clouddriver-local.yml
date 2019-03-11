@@ -5,4 +5,4 @@ aws:
     - name: my-aws-account
       lambdaEnabled: true
       accountId: '481090335964'
-      assumeRole: role/spinnakerManaged
+      assumeRole: role/EKSAdminRole
