@@ -143,6 +143,7 @@ hal --color false config security ui edit --override-base-url http://${DECK_ADDR
 hal --color false config security api edit --override-base-url http://${GATE_ADDRESS}
 ls -altr /opt/halyard/bin/halyard
 ls -altr ~/.hal/default/staging
+mkdir -p ~/.hal/default/profiles
 cp clouddriver-local.yml ~/.hal/default/profiles/clouddriver-local.yml
 if [ ! -z "${AUTHN_CLIENT_ID}" ] && [ ! -z "${AUTHN_CLIENT_SECRET}" ] && [ ! -z "${AUTHZ_ACCESS_TOKEN}" ] && [ ! -z "${GITHUB_ORG}" ]; then
     hal --color false config security authn oauth2 edit \
