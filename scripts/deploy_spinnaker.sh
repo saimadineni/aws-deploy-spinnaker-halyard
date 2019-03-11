@@ -162,7 +162,7 @@ hal --color false config version edit --version ${SPINNAKER_VERSION}
 #cp resources/halyard/deck.yml /home/spinnaker/.hal/default/service-settings/deck.yml
 
 hal --color false deploy apply
-ls -altr mkdir -p ~/.hal/default/
+ls -altr ~/.hal/default/
 mkdir -p ~/.hal/default/profiles
 cp clouddriver-local.yml ~/.hal/default/profiles/clouddriver-local.yml
 set +x
