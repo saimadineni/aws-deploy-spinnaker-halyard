@@ -143,8 +143,6 @@ hal --color false config security ui edit --override-base-url http://${DECK_ADDR
 hal --color false config security api edit --override-base-url http://${GATE_ADDRESS}
 ls -altr /opt/halyard/bin/halyard
 ls -altr ~/.hal/default/staging
-mkdir -p ~/.hal/default/profiles
-cp clouddriver-local.yml ~/.hal/default/profiles/clouddriver-local.yml
 if [ ! -z "${AUTHN_CLIENT_ID}" ] && [ ! -z "${AUTHN_CLIENT_SECRET}" ] && [ ! -z "${AUTHZ_ACCESS_TOKEN}" ] && [ ! -z "${GITHUB_ORG}" ]; then
     hal --color false config security authn oauth2 edit \
       --client-id ${AUTHN_CLIENT_ID} \
@@ -164,7 +162,9 @@ hal --color false config version edit --version ${SPINNAKER_VERSION}
 #cp resources/halyard/deck.yml /home/spinnaker/.hal/default/service-settings/deck.yml
 
 hal --color false deploy apply
-
+ls -altr mkdir -p ~/.hal/default/
+mkdir -p ~/.hal/default/profiles
+cp clouddriver-local.yml ~/.hal/default/profiles/clouddriver-local.yml
 set +x
 echo "The Spinnaker UI (deck) should be accessible at the following address: ${DECK_ADDRESS}"
 echo "The Spinnaker API server (gate) should be at the following address: ${GATE_ADDRESS}"
