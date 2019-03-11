@@ -165,6 +165,7 @@ hal --color false deploy apply
 ls -altr ~/.hal/default/
 mkdir -p ~/.hal/default/profiles
 cp clouddriver-local.yml ~/.hal/default/profiles/clouddriver-local.yml
+hal --color false deploy apply
 set +x
 echo "The Spinnaker UI (deck) should be accessible at the following address: ${DECK_ADDRESS}"
 echo "The Spinnaker API server (gate) should be at the following address: ${GATE_ADDRESS}"
