@@ -141,7 +141,7 @@ hal --color false config storage edit --type s3
 
 hal --color false config security ui edit --override-base-url http://${DECK_ADDRESS}
 hal --color false config security api edit --override-base-url http://${GATE_ADDRESS}
-
+cp clouddriver-local.yml /home/spinnaker/.hal/default/profiles/clouddriver-local.yml
 if [ ! -z "${AUTHN_CLIENT_ID}" ] && [ ! -z "${AUTHN_CLIENT_SECRET}" ] && [ ! -z "${AUTHZ_ACCESS_TOKEN}" ] && [ ! -z "${GITHUB_ORG}" ]; then
     hal --color false config security authn oauth2 edit \
       --client-id ${AUTHN_CLIENT_ID} \
